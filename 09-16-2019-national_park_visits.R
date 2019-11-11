@@ -1,0 +1,12 @@
+library(tidyverse)
+
+# Read in dataset(s)
+park_visits <- readr::read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2019/2019-09-17/national_parks.csv")
+state_pop <- readr::read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2019/2019-09-17/state_pop.csv")
+gas_price <- readr::read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2019/2019-09-17/gas_price.csv")
+head(park_visits)
+summary(park_visits)
+head(state_pop)
+summary(state_pop)
+head(gas_price)
+summary(gas_price)
