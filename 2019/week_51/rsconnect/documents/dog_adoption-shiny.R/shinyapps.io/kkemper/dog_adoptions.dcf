@@ -1,0 +1,13 @@
+name: dog_adoptions
+title: dog_adoptions
+username:
+account: kkemper
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 1862893
+bundleId: 2829742
+url: https://kkemper.shinyapps.io/dog_adoptions/
+when: 1582671845.93138
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: .RData|07-16-2019-r4ds_slack.R|07-23-2019-bird_impacts.R|07-30-2019-video_games.R|08-13-2019-emperors.R|08-19-2019-nuclear_explosions.R|09-16-2019-national_park_visits.R|11-12-2019-cran_code.R|2019-12-17-pet_adoption-eda.R|2019-12-17-pet_adoption.R|christmas_songs-eda.nb.html|christmas_songs-eda.Rmd|cran_code-eda.Rmd|dog_adoption-study01.Rmd|nuclear_explosions.gif|2019-12-17-pet_adoption/app.R|2020/.DS_Store|2020/Untitled.R|2020/Week 1/2020-01-06-australian_fires.R|2020/Week 7/2020-02-11-hotel_bookings.R
