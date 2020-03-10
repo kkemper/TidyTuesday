@@ -1,7 +1,7 @@
 library(tidyverse)
 
-rainfall <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-01-07/rainfall.csv')
-temperature <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-01-07/temperature.csv')
+rainfall <- readr::read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-01-07/rainfall.csv")
+temperature <- readr::read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-01-07/temperature.csv")
 head(rainfall)
 head(temperature)
 
@@ -17,7 +17,7 @@ rainfall %>%
     title = "Australian rain by city since 1970"
   )
 
-  sydney_rainfall
+sydney_rainfall
 # Convert rainfall$city_name to upper
 
 # join on city name
@@ -25,4 +25,3 @@ rainfall %>%
 # group by city, year
 
 # summarize sum of rainfall
-
