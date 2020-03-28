@@ -2,6 +2,8 @@
 library(tidyverse)
 library(rvest)
 library(scales)
+library(tidytext)
+library(datasets)
 
 # Read data
 tbi_age <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-03-24/tbi_age.csv')
@@ -21,22 +23,17 @@ tbi_age %>%
        caption = "Data from https://www.cdc.gov/")
 
 # Proportion of deaths by intentional self-harm
+
 data <- tbi_age %>%
   filter(type == "Deaths") %>%
+  mutate(injury_mechanism = factor(injury_mechanism)) %>%
   group_by(injury_mechanism) %>%
   summarize(deaths = sum(number_est, na.rm = TRUE)) %>%
-  mutate(prop = (deaths/sum(deaths) * 100))%>%
-  arrange(desc(deaths)) %>%
-  mutate(ypos = cumsum(prop) - 0.5 * prop)
+  mutate(prop = round(deaths/sum(deaths) * 100))
 
 barplot <- data %>%
-  ggplot(aes(x = "", y = prop, fill = injury_mechanism)) + 
-  geom_bar(width = 1, stat = "identity", color = "white")
-
-pie <- barplot + coord_polar("y", start = 0) +
-  theme_void() +
-  geom_text(aes(y = ypos, label = prop), size = 6, color = "white") +
-  labs(title = "Causes of Traumatic Head Injury", subtitle = "2006 - 2014") +
-  scale_fill_manual(values = mycols)
-pie
-
+  ggplot(aes(x = "", y = prop, fill = injury_mechanism))+
+  geom_bar(width = 1, stat = "identity", color = "white") +
+  labs(x = "", y = "Proportion of Deaths", title = "Proportion of causes due to traumatic brain injury", subtitle = ("2006 - 2014")) + 
+  guides(fill = guide_legend(title = "Injury Mechanism"))
+barplot
